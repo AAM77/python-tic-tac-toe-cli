@@ -52,3 +52,9 @@ def test_get_player_move(capfd):
     game.get_player_move()
     out, err = capfd.readouterr()
     assert out == "Please select a position to place your mark.\n"
+
+def test_update_board():
+    game = Game()
+    game.player_selection = 8
+    game.update_board()
+    assert game.board == ["1", "2", "3", "4", "5", "6", "7", "X", "9"]
