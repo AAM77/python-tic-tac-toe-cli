@@ -88,6 +88,12 @@ def test_is_tie_false():
     game.board = ['X', 'X', 'X', 'O', 'X', 'O', 'O', 'O', '9']
     assert game.is_tie() == False
 
+def test_reset_player_selection():
+    game = Game()
+    game.player_selection = 8
+    game.reset_player_selection()
+    assert game.player_selection == ""
+
 def test_reset_board():
     game = Game()
     game.board = ["X", "O", "X", "X", "O", "O", "X", "X", "O"]
