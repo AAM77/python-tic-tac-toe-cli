@@ -59,6 +59,25 @@ def test_update_board():
     game.update_board()
     assert game.board == ["1", "2", "3", "4", "5", "6", "7", "X", "9"]
 
+def test_is_winner_true_if_x():
+    game = Game()
+    game.board = ['X', 'X', 'X', 'O', 'X', 'O', 'O', 'O', '9']
+    assert game.is_winner() == True
+
+def test_is_winner_true_if_o():
+    game = Game()
+    game.board = ['O', 'O', 'O', 'X', 'O', 'X', 'X', 'X', '9']
+    assert game.is_winner() == True
+
+def test_is_winner_false_if_empty():
+    game = Game()
+    assert game.is_winner() == False
+
+def test_is_winner_false_if_tie():
+    game = Game()
+    game.board = ["X", "O", "X", "O", "X", "O", "O", "X", "O"]
+    assert game.is_winner() == False
+
 def test_reset_board():
     game = Game()
     game.board = ["X", "O", "X", "X", "O", "O", "X", "X", "O"]
