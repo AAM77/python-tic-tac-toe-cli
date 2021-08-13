@@ -14,6 +14,9 @@
         - display the updated board
     - Determine if someone won
     - Determine if the game is a tie
+    - Determine if game is over
+    - Determine whose turn it is
+    - Determine 
 
 ### CLI CLASS
 
