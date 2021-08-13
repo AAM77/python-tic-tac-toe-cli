@@ -11,6 +11,7 @@ class Game:
             (3, 4, 5),
             (6, 7, 8)
         ]
+        self.player_selection = ""
 
     def display_board(self):
         print(f" {' | '.join(self.board[0:3])} ")
@@ -31,3 +32,6 @@ class Game:
                 return 'X'
             elif all(self.board[index] == 'O' for index in combination):
                 return 'O'
+
+    def get_player_move(self):
+        self.player_selection = input("Please select a position to place your mark.\n").upper()
