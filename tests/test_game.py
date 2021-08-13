@@ -37,12 +37,12 @@ def test_current_player_is_o():
     game.board = ['X', 'O', 'X', 'O', 'X', 'O', 'X', '8', '9']
     assert game.current_player() == 'O'
 
-def test_x_is_winner():
+def test_determine_winner_is_x():
     game = Game()
     game.board = ['X', 'X', 'X', 'O', 'X', 'O', 'O', 'O', '9']
-    assert game.is_winner() == 'X'
+    assert game.determine_winner() == 'X'
 
-def test_o_is_winner():
+def test_determine_winner_is_o():
     game = Game()
     game.board = ['O', 'O', 'O', 'X', 'O', 'X', 'X', 'X', '9']
-    assert game.is_winner() == 'O'
+    assert game.determine_winner() == 'O'
