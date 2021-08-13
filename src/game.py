@@ -41,3 +41,6 @@ class Game:
                 return 'X'
             elif all(self.board[index] == 'O' for index in combination):
                 return 'O'
+    
+    def reset_board(self):
+        self.board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
