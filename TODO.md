@@ -3,6 +3,7 @@
 ## Components
 
 ### GAME CLASS
+
     - I need a class that starts a game of tic-tac-toe
     - This class should:
       - create an empty board
@@ -16,8 +17,6 @@
     - Determine if the game is a tie
     - Determine if game is over
     - Determine whose turn it is
-    - Determine 
-
 ### CLI CLASS
 
     - Welcomes the users
@@ -28,4 +27,3 @@
       - exit
     - Starts the game
     - Gives the user the option to restart or exit after each game
-
