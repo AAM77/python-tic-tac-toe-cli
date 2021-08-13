@@ -1,7 +1,7 @@
 class Game:
     def __init__(self):
         self.board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        self.winning_combinations = [
+        self.WINNING_COMBINATIONS = [
             (0, 1, 2),
             (0, 3, 6),
             (0, 4, 8),
@@ -36,7 +36,7 @@ class Game:
         self.board = new_board
     
     def determine_winner(self):
-        for combination in self.winning_combinations:
+        for combination in self.WINNING_COMBINATIONS:
             if all(self.board[index] == 'X' for index in combination):
                 return 'X'
             elif all(self.board[index] == 'O' for index in combination):

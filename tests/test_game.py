@@ -16,7 +16,7 @@ def test_display_board(capfd):
 
 def test_winning_combinations():
     game = Game()
-    assert game.winning_combinations == [
+    assert game.WINNING_COMBINATIONS == [
         (0, 1, 2),
         (0, 3, 6),
         (0, 4, 8),
