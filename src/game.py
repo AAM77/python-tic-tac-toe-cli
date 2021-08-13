@@ -11,7 +11,6 @@ class Game:
             (3, 4, 5),
             (6, 7, 8)
         ]
-        self.winner = ""
 
     def display_board(self):
         print(f" {' | '.join(self.board[0:3])} ")
@@ -26,11 +25,9 @@ class Game:
         else:
             return 'X'
 
-    def is_winner(self):
+    def determine_winner(self):
         for combination in self.winning_combinations:
             if all(self.board[index] == 'X' for index in combination):
-                self.winner = 'X'
+                return 'X'
             elif all(self.board[index] == 'O' for index in combination):
-                self.winner = 'O'
-            break
-        return self.winner
+                return 'O'
