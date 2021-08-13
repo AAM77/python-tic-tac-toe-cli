@@ -78,6 +78,16 @@ def test_is_winner_false_if_tie():
     game.board = ["X", "O", "X", "O", "X", "O", "O", "X", "O"]
     assert game.is_winner() == False
 
+def test_is_tie_true():
+    game = Game()
+    game.board = ["X", "O", "X", "O", "X", "O", "O", "X", "O"]
+    assert game.is_tie() == True
+
+def test_is_tie_false():
+    game = Game()
+    game.board = ['X', 'X', 'X', 'O', 'X', 'O', 'O', 'O', '9']
+    assert game.is_tie() == False
+
 def test_reset_board():
     game = Game()
     game.board = ["X", "O", "X", "X", "O", "O", "X", "X", "O"]
