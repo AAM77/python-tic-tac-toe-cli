@@ -21,7 +21,7 @@ class Game:
         print(f" {' | '.join(self.board[6:10])} ")
 
     def current_player(self):
-        if self.board.count('X') % 2 == 0:
+        if self.board.count('X') >= 1 and self.board.count('X') % 2 == 0:
             return 'O'
         else:
             return 'X'
@@ -34,4 +34,9 @@ class Game:
                 return 'O'
 
     def get_player_move(self):
-        self.player_selection = input("Please select a position to place your mark.\n").upper()
+        self.player_selection = input("Please select a position to place your mark.\n")
+    
+    def update_board(self):
+        new_board = self.board.copy()
+        new_board[int(self.player_selection) - 1] = self.current_player()
+        self.board = new_board
