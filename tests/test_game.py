@@ -47,9 +47,9 @@ def test_determine_winner_is_o():
     game.board = ['O', 'O', 'O', 'X', 'O', 'X', 'X', 'X', '9']
     assert game.determine_winner() == 'O'
 
-def test_get_player_move(capfd):
+def test_get_desired_position(capfd):
     game = Game()
-    game.get_player_move()
+    game.get_desired_position()
     out, err = capfd.readouterr()
     assert out == "Please select a position to place your mark.\n"
 

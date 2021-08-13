@@ -26,17 +26,18 @@ class Game:
         else:
             return 'X'
 
+
+    def get_desired_position(self):
+        self.player_selection = input("Please select a position to place your mark.\n")
+
+    def update_board(self):
+        new_board = self.board.copy()
+        new_board[int(self.player_selection) - 1] = self.current_player()
+        self.board = new_board
+    
     def determine_winner(self):
         for combination in self.winning_combinations:
             if all(self.board[index] == 'X' for index in combination):
                 return 'X'
             elif all(self.board[index] == 'O' for index in combination):
                 return 'O'
-
-    def get_player_move(self):
-        self.player_selection = input("Please select a position to place your mark.\n")
-    
-    def update_board(self):
-        new_board = self.board.copy()
-        new_board[int(self.player_selection) - 1] = self.current_player()
-        self.board = new_board
