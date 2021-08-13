@@ -58,3 +58,9 @@ def test_update_board():
     game.player_selection = 8
     game.update_board()
     assert game.board == ["1", "2", "3", "4", "5", "6", "7", "X", "9"]
+
+def test_reset_board():
+    game = Game()
+    game.board = ["X", "O", "X", "X", "O", "O", "X", "X", "O"]
+    game.reset_board()
+    assert game.board == ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
