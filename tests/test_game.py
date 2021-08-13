@@ -14,7 +14,7 @@ def test_display_board(capfd):
     out, err = capfd.readouterr()
     assert out == " 1 | 2 | 3 \n-----------\n 4 | 5 | 6 \n-----------\n 7 | 8 | 9 \n"
 
-def test_combinations():
+def test_winning_combinations():
     game = Game()
     assert game.winning_combinations == [
         (0, 1, 2),
