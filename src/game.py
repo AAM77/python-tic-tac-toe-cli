@@ -26,7 +26,6 @@ class Game:
         else:
             return 'X'
 
-
     def get_desired_position(self):
         self.player_selection = input("Please select a position to place your mark.\n")
 
@@ -34,13 +33,41 @@ class Game:
         new_board = self.board.copy()
         new_board[int(self.player_selection) - 1] = self.current_player()
         self.board = new_board
+
+    def is_winner(self):
+        for combination in self.WINNING_COMBINATIONS:
+            if (
+                all(self.board[index] == 'X' for index in combination) or
+                all(self.board[index] == 'O' for index in combination)
+                ):
+                return True
+        return False
     
+    def is_tie(self):
+        if not self.is_winner() and all(item in ['X', 'O'] for item in self.board):
+            return True
+        return False
+
     def determine_winner(self):
         for combination in self.WINNING_COMBINATIONS:
             if all(self.board[index] == 'X' for index in combination):
                 return 'X'
             elif all(self.board[index] == 'O' for index in combination):
                 return 'O'
-    
+
     def reset_board(self):
         self.board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    
+    def reset_player_selection(self):
+        self.player_selection = ""
+
+    def initiate_turn(self):
+        pass
+        # check if the game is over (someone won or it is a tie)
+        # check which user's turn it is
+        # ask the user for input
+        # update the board with the user's input
+        # display the board
+    
+    def end_game(self):
+        pass
