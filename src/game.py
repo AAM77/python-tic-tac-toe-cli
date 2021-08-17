@@ -68,13 +68,11 @@ class Game:
     def reset_player_selection(self):
         self.player_selection = ""
 
-    def initiate_turn(self):
-        pass
-        # check if the game is over (someone won or it is a tie)
-        # check which user's turn it is
-        # ask the user for input
-        # update the board with the user's input
-        # display the board
-
     def is_over(self) -> bool:
         return True if self.is_winner() or self.is_tie() else False
+
+    def take_turn(self):
+        if not self.is_over():
+            self.get_desired_position()
+            self.update_board()
+            self.display_board()
