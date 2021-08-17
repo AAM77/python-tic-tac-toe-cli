@@ -145,6 +145,21 @@ def test_is_tie_false():
     game.board = ['X', 'X', 'X', 'O', 'X', 'O', 'O', 'O', '9']
     assert game.is_tie() == False
 
+def test_game_is_over_with_tie():
+    game = Game()
+    game.board = ["X", "O", "X", "O", "X", "O", "O", "X", "O"]
+    assert game.is_over() == True
+
+def test_game_is_over_with_x_win():
+    game = Game()
+    game.board = ['X', 'X', 'X', 'O', 'X', 'O', 'O', 'O', '9']
+    assert game.is_over() == True
+
+def test_game_is_over_with_o_win():
+    game = Game()
+    game.board = ['O', 'O', 'O', 'X', 'O', 'X', 'X', 'X', '9']
+    assert game.is_over() == True
+
 def test_reset_player_selection():
     game = Game()
     game.player_selection = 8
