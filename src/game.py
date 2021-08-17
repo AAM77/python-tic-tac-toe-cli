@@ -75,5 +75,5 @@ class Game:
         # update the board with the user's input
         # display the board
 
-    def end_game(self: object):
-        pass
+    def is_over(self) -> bool:
+        return True if self.is_winner() or self.is_tie() else False
