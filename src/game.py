@@ -29,6 +29,10 @@ class Game:
     def get_desired_position(self):
         self.player_selection = input("Please select a position to place your mark.\n")
 
+        if self.player_selection not in [str(i) for i in range(1, 10)]:
+            self.reset_player_selection()
+            print("Invalid selection. Enter a number from 1 to 9.")
+
     def update_board(self):
         new_board = self.board.copy()
         new_board[int(self.player_selection) - 1] = self.current_player()
@@ -57,7 +61,7 @@ class Game:
 
     def reset_board(self):
         self.board = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    
+
     def reset_player_selection(self):
         self.player_selection = ""
 
@@ -68,6 +72,6 @@ class Game:
         # ask the user for input
         # update the board with the user's input
         # display the board
-    
+
     def end_game(self):
         pass
